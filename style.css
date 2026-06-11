@@ -1,1 +1,264 @@
+/* Configurações Globais e Variáveis de Cores Temáticas */
+:root {
+    --primary: #2e7d32;
+    --primary-dark: #1b5e20;
+    --bg-main: #f4f7f5;
+    --text-dark: #2c3e50;
+    --text-muted: #718096;
+    --water-color: #2b6cb0;
+    --soil-color: #8c7853;
+    --money-color: #b7791f;
+    --danger: #e53e3e;
+    --success: #38a169;
+}
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+.game-container {
+    width: 100%;
+    max-width: 650px;
+    padding: 20px;
+}
+
+/* Cabeçalho Estilo Dashboard */
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+header h1 { 
+    margin: 0; 
+    font-size: 24px; 
+    font-weight: 700;
+}
+
+header h1 i {
+    margin-right: 8px;
+    color: #a5d6a7;
+}
+
+.subtitle {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.game-meta {
+    font-size: 15px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Painel de Indicadores de Recursos (Mecânica de Sobrevivência) */
+.status-bar-container {
+    background: #ffffff;
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-bottom: 2px solid #edf2f7;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.status-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-item label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Ícones coloridos dos recursos */
+.icon-water { color: var(--water-color); }
+.icon-soil { color: var(--soil-color); }
+.icon-money { color: var(--money-color); }
+
+/* Estrutura das Barras de Progresso */
+.progress-bar {
+    background-color: #edf2f7;
+    border-radius: 20px;
+    height: 12px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out; /* Animação suave quando o recurso muda */
+}
+
+/* Cores específicas com efeito realista de gradiente */
+.progress-fill.water { background: linear-gradient(90deg, #3182ce, #4299e1); }
+.progress-fill.soil { background: linear-gradient(90deg, #715c36, #8c7853); }
+.progress-fill.money { background: linear-gradient(90deg, #dd6b20, #ecc94b); }
+
+/* Corpo Principal (Card de Eventos) */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.level-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#level-title {
+    color: var(--primary-dark);
+    margin: 0;
+    font-size: 20px;
+}
+
+#level-desc {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* Alertas de Clima Dinâmicos */
+.badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge.alert {
+    background-color: #fff5f5;
+    color: var(--danger);
+    border: 1px solid #feb2b2;
+    animation: pulse 2s infinite; /* Efeito piscante discreto de crise */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 20px 0;
+}
+
+/* Caixa do Oráculo / Questões */
+.oracle-box h3 {
+    color: var(--primary-dark);
+    margin-top: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#question-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Botões de Decisão Realistas */
+.btn-option {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    color: var(--text-dark);
+    padding: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    line-height: 1.4;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.btn-option:hover {
+    background-color: #f7fafc;
+    border-color: var(--primary);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+}
+
+/* Sistema de Feedbacks de Impacto Climático/Econômico */
+.hidden { display: none; }
+
+#feedback {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sucesso {
+    background-color: #f0fff4;
+    color: var(--success);
+    border: 1px solid #c6f6d5;
+}
+
+.crise {
+    background-color: #fff5f5;
+    color: var(--danger);
+    border: 1px solid #fed7d7;
+}
+
+/* Animações */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
