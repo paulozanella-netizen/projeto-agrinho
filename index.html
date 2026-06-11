@@ -3,29 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroEquilíbrio 2050</title>
+    <title>AgroEquilíbrio 2050 - Simulador de Gestão Sustentável</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <div class="game-container">
         <header>
-            <h1>AgroEquilíbrio 2050</h1>
-            <div class="status">
+            <div class="brand">
+                <h1><i class="fa-solid fa-seedling"></i> AgroEquilíbrio 2050</h1>
+                <p class="subtitle">Simulador de Decisões Agroecológicas</p>
+            </div>
+            <div class="game-meta">
                 <span>Nível: <strong id="level-display">1</strong></span>
                 <span>Pontos: <strong id="score-display">0</strong></span>
             </div>
         </header>
 
+        <section class="status-bar-container">
+            <div class="status-item">
+                <label><i class="fa-solid fa-droplet icon-water"></i> Água Disponível</label>
+                <div class="progress-bar">
+                    <div id="bar-water" class="progress-fill water" style="width: 80%;"></div>
+                </div>
+            </div>
+            
+            <div class="status-item">
+                <label><i class="fa-solid fa-earth-americas icon-soil"></i> Saúde do Solo</label>
+                <div class="progress-bar">
+                    <div id="bar-soil" class="progress-fill soil" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <div class="status-item">
+                <label><i class="fa-solid fa-coins icon-money"></i> Capital Disponível</label>
+                <div class="progress-bar">
+                    <div id="bar-money" class="progress-fill money" style="width: 60%;"></div>
+                </div>
+            </div>
+        </section>
+
         <main class="card">
-            <h2 id="level-title">Nível 1 (O Despertar)</h2>
-            <p id="level-desc">Gestão de uma pequena fazenda familiar. O desafio é sobreviver à primeira grande seca.</p>
+            <div class="level-header">
+                <h2 id="level-title">Nível 1 (O Despertar)</h2>
+                <span id="climate-badge" class="badge alert"><i class="fa-solid fa-temperature-high"></i> Clima: Seca Extrema</span>
+            </div>
+            <p id="level-desc">Gestão de uma pequena fazenda familiar. O desafio é sobreviver à primeira grande seca sem esgotar o lençol freático.</p>
             
             <hr>
 
             <div class="oracle-box">
-                <h3>🔮 O Oráculo do Agro</h3>
-                <p id="question-text">Carregando desafio técnico...</p>
+                <h3><i class="fa-solid fa-brain"></i> O Oráculo do Agro</h3>
+                <p id="question-text">Carregando relatório técnico do campo...</p>
                 
                 <div id="options-container" class="options-grid">
                     </div>
